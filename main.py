@@ -34,6 +34,11 @@ TEXTS = [
     garpike and stingray are also present.'''
 ]
 
+#Import knihoven
+from math import fsum
+from collections import Counter
+import string
+
 #Přihlášení a ověření uživatele
 cara = "-" * 40
 login_udaje = {"bob": "123",
@@ -65,13 +70,9 @@ elif int(text_choose) < 1 or int(text_choose) > 3:
 print(cara)
 
 #Analýza textu
-from math import fsum
-from collections import Counter
-import string
-
 print("Analyzing the text...")
 for punc in string.punctuation:
-    choosed_text = choosed_text.replace(punc, " ")
+    choosed_text = choosed_text.replace(punc, "")
 
 text_words = choosed_text.split()
 text_title = []
